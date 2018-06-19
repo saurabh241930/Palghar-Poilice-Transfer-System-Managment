@@ -1,0 +1,94 @@
+<html>
+  <title>PPST</title>
+  <head>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:700" rel="stylesheet">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    
+    <div class="row">
+      
+      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:#2d2d2d;
+                                                                            height:100%;
+                                                                            text-align:center;
+                                                                            font-family: 'Cabin', sans-serif;
+                                                                            position:fixed; 
+                                                                            border-right:solid 1px #ccc
+                                                                            ">
+        <div class="col col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-12" style=";background-color:#C9302C;width:107%">
+          <h2 style="color: white"><strong>PPTS</strong></h2>
+          <p style="font-weight: lighter;font-size: 14px;color: #ccc">पालघर पोलीस  ट्रान्सफर सिस्टिम </p>
+        </div>
+
+      </div>
+     
+        
+      </div>
+      
+        <div class="col col-xl-9 col-lg-10 col-md-9 col-sm-9 col-xs-12" style="background-color:;
+                                                                            height:1200px;
+                                                                            float:right;
+                                                                            font-family: 'Cabin', sans-serif;
+                                                                           ">
+         
+      <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Requested Branch</th>
+        <th>Preference</th>
+        <th>Approval</th>
+      </tr>
+    </thead>
+      <tbody id="table-body">
+      <%requests.forEach(function(request){%>
+        <tr class="tr">
+          <td><%=request.fullName%></td>
+          <td><%=request.requestedBranch.BranchName%></td>
+          <td><%=request.preference%></td>
+          <td>
+          	<button type="submit" class="btn btn-primary btn-sm view-request">View Request</button>
+          </td>
+          <td class="request-user"> 
+              <img style="height:100px;
+                          width:100px" src="https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_200x200_v1.png" alt="">
+              <strong><%=request.fullName%></strong>
+              <h3><%=request.username%></h3>
+              <strong><%=request.Location%></srongt>
+              <h3>Requetsed Branch : <%=request.requestedBranch.BranchName%> </h3>
+          </td>
+        </tr>
+      <%})%>
+    </tbody>
+  </table>
+ 
+    
+ 
+
+<% include partials/comman %>
+ </body>
+  
+</html>
+ 
+
+
+
+
+
+
+
