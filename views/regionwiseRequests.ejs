@@ -71,6 +71,9 @@
               <h3><%=request.username%></h3>
               <strong><%=request.Location%></srongt>
               <h3>Requetsed Branch : <%=request.requestedBranch.BranchName%> </h3>
+              <form action="/acceptRequest/<%=request._id%>" method="POST">
+               <button type="submit" class="btn btn-success btn-lg">Approve Request</button>
+              </form>
           </td>
         </tr>
       <%})%>

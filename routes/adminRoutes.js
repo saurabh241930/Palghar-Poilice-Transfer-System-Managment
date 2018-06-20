@@ -111,6 +111,58 @@ User.findById(req.user._id,function(err,user){
 })
 
 
+router.post("/acceptRequest/:id",function(req,res){
+
+  Request.findById(req.params.id,function(err,request){
+      if (err) {
+        console.log(err)
+      } else {
+
+      User.findById(request.id,function(err,user) {
+           if (err) {
+            console.log(err)
+           } else {
+            Branch.findById(request.requestedBranch.id,function(err,requestedBranch){
+              if (err) {
+                console.log(err)
+              } else {
+                Branch.findById(user.currentBranch.id,function(err,currentBranch){
+                  if (err) {
+                    console.log(err)
+                  } else {
+
+                Branch.update({currentBranch._id},{$pull:{Members:{id:user._id}}},function(err,removedMember){
+                  if (err) {
+                    console.log(err)
+                  } else {
+                    requestedBranch.Members.push(removedMember);
+                    requestedBranch.save()
+
+                    request.requestedBranch.Accepted = true;
+                    request.save()
+
+                    user.currentBranch.id = requestedBranch._id;
+                    user.currentBranch.BranchName = requestedBranch.BranchName;
+                    user.currentBranch.Location = requestedBranch.Location;
+                    user.save()
+
+                    res.redirect("back")
+                  }
+                })
+
+
+                  }
+                })
+              }
+            })
+           }
+      })
+
+
+      }
+    })
+})
+
 
 
 router.get('/uploadImage',isAdmin,function(req,res){
