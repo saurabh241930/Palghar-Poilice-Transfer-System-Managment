@@ -84,31 +84,31 @@ router.post('/authorize', passport.authenticate("local", {
 });
 
 
-// router.get('/regionwiseRequests',function(req,res){
+router.get('/regionwiseRequests',function(req,res){
 
-// User.findById(req.user._id,function(err,user){
-//   if (err) {
-//     console.log(err)
-//   } else {
-//      Request.find({"Location":user.Location}).sort({preference:1}).exec(function(err,requests){
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       if(req.xhr){
-//         res.json(requests)
-//       }else{
-//         console.log(requests);
-//          res.render("regionwiseRequests",{requests:requests})
-//       }
+User.findById(req.user._id,function(err,user){
+  if (err) {
+    console.log(err)
+  } else {
+     Request.find({"Location":user.Location}).sort({preference:1}).exec(function(err,requests){
+    if (err) {
+      console.log(err);
+    } else {
+      if(req.xhr){
+        res.json(requests)
+      }else{
+        console.log(requests);
+         res.render("regionwiseRequests",{requests:requests})
+      }
          
   
-//         }
-//   })
-//   }
-// })
+        }
+  })
+  }
+})
 
   
-// })
+})
 
 
 
