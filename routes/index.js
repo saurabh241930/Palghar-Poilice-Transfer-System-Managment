@@ -79,6 +79,11 @@ router.post('/apply/:id', function(req, res) {
       console.log(err);
     } else {
 
+       user.requestInProcess = true;
+       user.requestSubmittedOn = new Date;
+       user.save()
+
+
       Branch.findById(req.body.preference1, function(err, branch) {
         if (err) {
           console.log(err)

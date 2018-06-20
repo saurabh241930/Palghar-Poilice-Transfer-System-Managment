@@ -131,11 +131,22 @@ router.post("/acceptRequest/:id",function(req,res){
                     console.log(err)
                   } else {
 
-                Branch.update({currentBranch._id},{$pull:{Members:{id:user._id}}},function(err,removedMember){
+                Branch.update({_id:currentBranch._id},{$pull:{Members:{id:user._id}}},function(err,removedMember){
                   if (err) {
                     console.log(err)
                   } else {
-                    requestedBranch.Members.push(removedMember);
+                    
+
+                    var memberToTransfer = {
+                      id:user._id,
+                      username:user.username,
+                      fullName:user.fullName,
+                      email:user.email,
+                      profileImage:user.profileImage
+                    }
+
+
+                    requestedBranch.Members.push(memberToTransfer);
                     requestedBranch.save()
 
                     request.requestedBranch.Accepted = true;
@@ -144,6 +155,10 @@ router.post("/acceptRequest/:id",function(req,res){
                     user.currentBranch.id = requestedBranch._id;
                     user.currentBranch.BranchName = requestedBranch.BranchName;
                     user.currentBranch.Location = requestedBranch.Location;
+                    user.requestStatus.requestAccepted = true;
+                    user.requestStatus.requestAcceptedOn = new Date()
+                    user.requestStatus.requestAcceptedId = request._id;
+                    user.requestStatus.requestAcceptedBranchName = requestedBranch.BranchName
                     user.save()
 
                     res.redirect("back")

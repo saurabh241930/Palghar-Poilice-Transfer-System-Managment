@@ -6,11 +6,23 @@ var UserSchema = new mongoose.Schema({
   username: String,
   password: String,
   fullName: String,
+
   email: {type: String, unique: true, required: true},
-    resetPasswordToken: String,
-    resetPasswordExpires: Date,
+  resetPasswordToken: String,
+  resetPasswordExpires: Date,
+  requestInProcess:{type:Boolean,default:false},
+
   profileImage: String,
+
   Location:String,
+
+  requestStatus:{
+    requestAccepted:{type:Boolean,default:false},
+    requestAcceptedOn:Date,
+    requestAcceptedId:{type: mongoose.Schema.Types.ObjectId,ref: "Branch"},
+    requestAcceptedBranchName:String
+  },
+
   isAdmin:{
             type:Boolean,
             default:false
