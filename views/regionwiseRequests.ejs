@@ -33,6 +33,21 @@
           <p style="font-weight: lighter;font-size: 14px;color: #ccc">पालघर पोलीस  ट्रान्सफर सिस्टिम </p>
         </div>
 
+        <div style="margin-top: 100px;">
+       <%branches.forEach(function(branch){%>
+
+<div style="margin-top: 10px;">
+   <a href="" class="btn btn-success btn-lg btn-block login-button" >
+     <span style="background-color: black;
+    border-radius: 5px;
+    color: white;
+    padding: 5px"><%=branch.Members.length%></span>
+    <%=branch.BranchName%> 
+   </a>
+</div>
+       
+<%})%>
+</div>
       </div>
      
         
@@ -61,12 +76,18 @@
           <td><%=request.fullName%></td>
           <td><%=request.requestedBranch.BranchName%></td>
           <td><%=request.preference%></td>
+          <%if(request.requestedBranch.Accepted == false){%>
           <td>
           	<button type="submit" class="btn btn-primary btn-sm view-request">View Request</button>
           </td>
+          <%}else{%>
+          <td>
+            <button type="submit" class="btn btn-success btn-sm view-request">Accepted</button>
+          </td>
+          <%}%>
           <td class="request-user"> 
               <img style="height:100px;
-                          width:100px" src="https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_200x200_v1.png" alt="">
+                          width:100px" src="<%=request.profileImage%>" alt="">
               <strong><%=request.fullName%></strong>
               <h3><%=request.username%></h3>
               <strong><%=request.Location%></srongt>

@@ -94,12 +94,18 @@ User.findById(req.user._id,function(err,user){
     if (err) {
       console.log(err);
     } else {
-      if(req.xhr){
+        Branch.find({"Location":user.Location}).exec(function(err,branches){
+        if (err) {
+           console.log(err);
+        } else {
+          if(req.xhr){
         res.json(requests)
       }else{
-        console.log(requests);
-         res.render("regionwiseRequests",{requests:requests})
+         res.render("regionwiseRequests",{requests:requests,branches:branches})
       }
+        }
+      })
+      
          
   
         }
