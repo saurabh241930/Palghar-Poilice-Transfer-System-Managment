@@ -27,23 +27,22 @@
                                                                             position:fixed; 
                                                                             border-right:solid 1px #ccc
                                                                             ">
+
+
         <div class="col col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-12" style=";background-color:#286090;width:107%">
           <h2 style="color: white"><strong>PPTS</strong></h2>
           <p style="font-weight: lighter;font-size: 14px;color: #ccc">पालघर पोलीस  ट्रान्सफर सिस्टिम </p>
         </div>
 
 
-        <img src="<%=currentUser.profileImage%>" alt="" 
+        <img src="https://en.indietrainers.com/media/images/empty-profile.png" alt="" 
              style="height:100px;width:100px;border-radius:;border:solid 10px #2d2d2d"><br>
-
-
-      <%if(currentUser.profileImage == "https://i.imgur.com/JijLK0p.png"){ %>
+        
    <a type="button" class="btn btn-primary" style="opacity:0.9;
                                                    margin-top:0px;
                                                    background-color:rgba(40,96,144,0.7);
                                                   
                                                    ">Add Profile Image</a>
-     <%}%> 
      
         
         <ul class="list-group" style="text-align:center;margin-left:18px;margin-top:20px">
@@ -76,59 +75,22 @@
         </script> -->     
         
       </div>
-      
-        <div class="col col-xl-9 col-lg-10 col-md-9 col-sm-9 col-xs-12" style="background-color:;
-                                                                            height:1200px;
-                                                                            float:right;
-                                                                            font-family: 'Cabin', sans-serif;
-                                                                           ">
-         
-      <div class="col col-xl-2 col-lg-2 col-md-9 col-sm-9 col-xs-12" style="background-color:white;
-      position: fixed;
-      left: 270px;
-      top: 100px
-      ">      
-<ul style="list-style-type: none;text-align:center;width:200px;margin-left:-50px;">
-  <a class="list-group-item active"  href="/homepage"><li >All Stations</li></a>
-  <a class="list-group-item"  href="/branches/Vasai"><li >Vasai</li></a>
-  <a class="list-group-item" href="/branches/Nalasophara"><li >Nalasophara</li></a>
-  <a class="list-group-item" href="/branches/Virar"><li >Virar</li></a>
-  <a class="list-group-item" href="/branches/Vaitarna"><li >Vaitarna</li></a>
-  <a class="list-group-item" href="/branches/Saphale"><li ></li>Saphale</a>
-  <a class="list-group-item" href="/branches/KelvaRoad"><li >Kelva Road</li></a>
-  <a class="list-group-item" href="/branches/Palghar"><li >Palghar</li></a>
-            
-            
-</ul>
-        
-      </div>
-          
-          
-      <div class="col col-xl-10 col-lg-10 col-md-9 col-sm-9 col-xs-12"
-               style="background-color:white;height:100%;text-align:center;float: right;"> 
-          
-<%branches.forEach(function(branch){%>
-            
-  <div class="col col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
-    
-    <div style="border:solid 1px #ccc;margin-top:20px;">
-      <i class="fa fa-university" style="font-size:70px;margin-top:50px"></i>
-         <p><strong style="color:black;font-size:20px">
-      <%=branch.BranchName%></strong></p><br>
-    <span style="font-size:17px">
-      <span style="color:blue">Location : </span><%=branch.Location%></span><br><br><br>
-    
-    <span style="font-size:15px">
-      <span style="color:green">Vacancy : </span>Not Available</span>
-    </div>
- 
-        </div>         
 
-<%})%>
-      </div>
+ <div class="col col-xl-9 col-lg-2 col-md-3 col-sm-3 col-xs-12">
+
+             <div class="container" style="background-color:">
+     <form style="text-align:center;" action = "/imageUpload" method="POST" enctype="multipart/form-data">
      
+       
+     <input style="margin:0 auto"  type="file" name="file"  ></input><br>
       
-    </div>
+ <input  type="submit" name="submit" value="Add Image"></input>
+
+
+
+       </div>
+      
+      
     
     
   </body>

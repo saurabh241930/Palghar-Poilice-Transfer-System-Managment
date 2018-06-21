@@ -12,7 +12,7 @@ var UserSchema = new mongoose.Schema({
   resetPasswordExpires: Date,
   requestInProcess:{type:Boolean,default:false},
 
-  profileImage: String,
+  profileImage:{type:String,default:"https://i.imgur.com/JijLK0p.png"},
 
   Location:String,
 

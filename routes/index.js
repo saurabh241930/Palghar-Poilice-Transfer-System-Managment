@@ -25,6 +25,34 @@ var Request = require('../models/Request');
 
 
 
+
+router.get("/imageUpload",function(req,res){
+  res.render("addImage")
+})
+
+ router.post('/imageUpload', upload.single('file'), function(req,res){
+   
+ 
+    cloudinary.uploader.upload(req.file.path,
+    function(result){
+      
+      User.findById(req.user._id,function(err,user){
+        if (err) {
+          console.log(err)
+        } else {
+          user.profileImage = result.secure_url;
+          user.save()
+        }
+      })
+      
+    })
+ })
+
+
+
+
+
+
 router.get('/',function(req,res){
       Branch.find({},function(err,branches){
     if (err) {
