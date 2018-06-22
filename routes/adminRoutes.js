@@ -90,11 +90,11 @@ User.findById(req.user._id,function(err,user){
   if (err) {
     console.log(err)
   } else {
-     Request.find({"Location":user.Location}).sort({preference:1}).exec(function(err,requests){
+     Request.find({}).sort({preference:1}).exec(function(err,requests){
     if (err) {
       console.log(err);
     } else {
-        Branch.find({"Location":user.Location}).exec(function(err,branches){
+        Branch.find({}).exec(function(err,branches){
         if (err) {
            console.log(err);
         } else {
