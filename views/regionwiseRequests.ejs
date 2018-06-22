@@ -34,19 +34,23 @@
         </div>
 
         <div style="margin-top: 100px;">
+
+ <div style="">
+          <div style="width: 100%">
+            <ul style="list-style-type: none;width: 100%;">
        <%branches.forEach(function(branch){%>
 
-<div style="margin-top: 10px;">
-   <a href="" class="btn btn-success btn-lg btn-block login-button" >
-     <span style="background-color: black;
-    border-radius: 5px;
-    color: white;
-    padding: 5px"><%=branch.Members.length%></span>
-    <%=branch.BranchName%> 
-   </a>
-</div>
+  <a class="list-group-item" style="background-color: #2d2d2d;color:white;width: 100%"  href="/homepage"><li ><%=branch.BranchName%></li></a>
+
+            
+            
+
        
 <%})%>
+
+</ul>
+</div>
+        </div>
 </div>
       </div>
      
