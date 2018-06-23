@@ -95,15 +95,16 @@ router.get('/regionwiseRequests',function(req,res){
   if (err) {
     console.log(err)
   } else {
-     Request.find({fullName:regex}).sort({preference:1}).exec(function(err,requests){
+     Request.find({"requestedBranch.BranchName":regex}).sort({preference:1}).exec(function(err,requests){
     if (err) {
       console.log(err);
     } else {
+       
         Branch.find({}).exec(function(err,branches){
         if (err) {
            console.log(err);
         } else {
-        if(user.length < 1){
+        if(requests.length < 1){
                 noMatch = "no result found please check the spell";
         }
          res.render("regionwiseRequests",{requests:requests,branches:branches,noMatch:noMatch})
