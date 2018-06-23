@@ -23,7 +23,7 @@
     
     <div class="row">
       
-      <div class="col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12" style="background-color:#2d2d2d;
+      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:#2d2d2d;
                                                                             height:100%;
                                                                             text-align:center;
                                                                             font-family: 'Cabin', sans-serif;
@@ -35,7 +35,28 @@
           <p style="font-weight: lighter;font-size: 14px;color: #ccc">पालघर पोलीस  ट्रान्सफर सिस्टिम </p>
         </div>
 
-        <div style="margin-top: 100px;">
+    <form class="form-inline pull right" >
+      <input class="form-control " name="search" type="search" placeholder="Search by area ..." aria-label="Search" 
+      style="width:90%;height: 40px;margin-top:10px;">
+      <button class="btn btn-primary  " type="submit" style="height: 40px;margin-top: 10px"><strong>Search</strong></button>
+    </form>
+
+
+
+    <ul class="list-group">
+      <%branches.forEach(function(branch){%>
+  <li class="list-group-item list-group-item-primary" style="font-weight: lighter;
+  font-size: 13px;
+  background-color:#2d2d2d;
+  color: white;
+  border-radius: 1px">
+   <%=branch.BranchName%>
+    <span class="badge badge-danger badge-pill"><%=branch.Members.length%></span>
+  </li>
+  <%})%>
+</ul>
+
+        <!-- <div style="margin-top: 10px;">
 
 
        <%branches.forEach(function(branch){%>
@@ -52,7 +73,7 @@ border-right:solid 20px #2d2d2d ">
             
 
        
-<%})%>
+<%})%> -->
 
 
 
@@ -62,16 +83,13 @@ border-right:solid 20px #2d2d2d ">
         
       </div>
       
-        <div class="col col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12" style="background-color:;
+        <div class="col col-xl-9 col-lg-10 col-md-9 col-sm-9 col-xs-12" style="background-color:;
                                                                             height:1200px;
                                                                             float:right;
                                                                             font-family: 'Cabin', sans-serif;
                                                                            ">
          
-         <form class="form-inline  pull-right" >
-      <input class="form-control " name="search" type="search" placeholder="Search" aria-label="Search" style="width:700px;height: 50px;margin-top: 5px">
-      <button class="btn btn-success  " type="submit" style="height: 50px">Search</button>
-    </form>
+       
       <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" >
 
 <table class="table table-striped">
