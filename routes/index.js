@@ -108,7 +108,14 @@ router.post('/apply/:id', function(req, res) {
     } else {
 
        user.requestInProcess = true;
-       user.requestSubmittedOn = new Date;
+       user.requestSubmittedOn = new Date();
+       d = user.requestSubmittedOn;
+       var year = d.getFullYear();
+       var month = d.getMonth();
+       var day = d.getDate();
+  
+       user.nextApplicableDate = new Date(year + 1, month, day)
+
        user.save()
 
 
@@ -664,10 +671,43 @@ if (err) {
 })
 })
 
+
+router.post("/registerationChecking",function(req,res){
+  User.find({},function(err,users){
+    if (err){
+      throw err;
+    } 
+     else {
+      var enteredPhoneNumber = req.body.username;
+      var allPhoneNumbers = []
+
+     users.forEach(function(user){
+      number = user.username
+      allPhoneNumbers.push(number)
+     })
+
+     if (allPhoneNumbers.some(x => x.toString() === enteredPhoneNumber.toString())) {
+          res.render("registerationCheckingError",{enteredPhoneNumber:enteredPhoneNumber})
+     } else {
+      Branch.find({},function(err,branches){
+        if (err) {
+          throw err
+        } else {
+          res.render("registeration",{enteredPhoneNumber:enteredPhoneNumber,branches:branches})
+        }
+      })
+          
+     }
+
+
+     }
+  })
+})
+
+
+
 //Sign Up logic
-router.post('/register', upload.single('profileImage'),function(req, res) {
-  
-  
+router.post('/register',function(req, res) {
   
   Branch.findById(req.body.branchId,function(err,branch){
     if (err) {
@@ -828,7 +868,7 @@ router.post('/forgot', function(req, res, next) {
       var mailOptions = {
         to: user.email,
         from: process.env.GMAILACCOUNT,
-        subject: 'Node.js Password Reset',
+        subject: 'पालघर पोलीस  ट्रान्सफर सिस्टिम ',
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
           'http://' + req.headers.host + '/reset/' + token + '\n\n' +

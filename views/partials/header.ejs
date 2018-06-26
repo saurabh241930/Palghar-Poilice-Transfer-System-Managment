@@ -64,7 +64,15 @@
         
         <div style="">
           <div class="btn-group-vertical" >
+
+
+<% var currentDate = new Date()%>
+ <%if(currentUser.nextApplicableDate.getTime() < currentDate.getTime()){%>
  <a href='/apply' id="Apply" type="button" class="btn btn-primary">Apply <i class="fa fa-arrow-right"></i></a>
+<%}%>
+
+
+
 <a href="/status" type="button" class="btn btn-primary">Status <i class="fa fa-user-cog"></i></a>
 <a  href="#" type="button" class="btn btn-primary">Notifications <i class="fa fa-bell"></i></a>
 <a href="/logout" type="button" class="btn btn-danger">Logout <i class="fa fa-sign-out"></i></a>
