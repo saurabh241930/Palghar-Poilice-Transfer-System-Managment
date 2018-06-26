@@ -112,7 +112,7 @@ router.post('/apply/:id', function(req, res) {
        d = user.requestSubmittedOn;
        var year = d.getFullYear();
        var month = d.getMonth();
-       var day = d.getDate();
+       var day = d.getDate()
   
        user.nextApplicableDate = new Date(year + 1, month, day)
 
