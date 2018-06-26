@@ -20,7 +20,7 @@
     
     <div class="row">
       
-      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:#2d2d2d;
+      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:black;
                                                                             height:100%;
                                                                             text-align:center;
                                                                             font-family: 'Cabin', sans-serif;
@@ -34,7 +34,7 @@
 
 
         <img src="<%=currentUser.profileImage%>" alt="" 
-             style="height:100px;width:100px;border-radius:;border:solid 10px #2d2d2d"><br>
+             style="height:100px;width:100px;border-radius:;border:solid 10px black"><br>
 
 
       <%if(currentUser.profileImage == "https://i.imgur.com/JijLK0p.png"){ %>
@@ -68,14 +68,13 @@
 
 <% var currentDate = new Date()%>
  <%if(currentUser.nextApplicableDate.getTime() < currentDate.getTime()){%>
- <a href='/apply' id="Apply" type="button" class="btn btn-primary">Apply <i class="fa fa-arrow-right"></i></a>
+ <a style="border-radius: 0px" href='/apply' id="Apply" type="button" class="btn btn-primary btn-lg">Apply <i class="fa fa-arrow-right"></i></a>
 <%}%>
 
 
 
-<a href="/status" type="button" class="btn btn-primary">Status <i class="fa fa-user-cog"></i></a>
-<a  href="#" type="button" class="btn btn-primary">Notification <i class="fa fa-bell"></i></a>
-<a href="/logout" type="button" class="btn btn-danger">Logout <i class="fa fa-sign-out"></i></a>
+<a style="border-radius: 0px" href="/status" type="button" class="btn btn-primary btn-lg">Status <i class="fa fa-user-cog"></i></a>
+<a style="border-radius: 0px" href="/logout" type="button" class="btn btn-danger btn-lg">Logout <i class="fa fa-sign-out"></i></a>
 </div>
         </div>
         

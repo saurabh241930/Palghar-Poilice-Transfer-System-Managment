@@ -10,17 +10,18 @@
       <div class="col col-xl-2 col-lg-2 col-md-9 col-sm-9 col-xs-12" style="background-color:white;
       position: fixed;
       left: 270px;
-      top: 100px
+      top: 100px;
+      border-radius: 0px
       ">      
 <ul style="list-style-type: none;text-align:center;width:200px;margin-left:-50px;">
-  <a class="list-group-item active"  href="/homepage"><li >All Stations</li></a>
+  <a style="border-radius: 0px" class="list-group-item active"  href="/homepage"><li >All Stations</li></a>
   <a class="list-group-item"  href="/branches/Vasai"><li >Vasai</li></a>
   <a class="list-group-item" href="/branches/Nalasophara"><li >Nalasophara</li></a>
   <a class="list-group-item" href="/branches/Virar"><li >Virar</li></a>
   <a class="list-group-item" href="/branches/Vaitarna"><li >Vaitarna</li></a>
   <a class="list-group-item" href="/branches/Saphale"><li ></li>Saphale</a>
   <a class="list-group-item" href="/branches/KelvaRoad"><li >Kelva Road</li></a>
-  <a class="list-group-item" href="/branches/Palghar"><li >Palghar</li></a>
+  <a  style="border-radius: 0px" class="list-group-item" href="/branches/Palghar"><li >Palghar</li></a>
             
             
 </ul>
@@ -29,21 +30,24 @@
           
           
       <div class="col col-xl-10 col-lg-10 col-md-9 col-sm-9 col-xs-12"
-               style="background-color:white;height:100%;text-align:center;float: right;"> 
+               style="background-color:white;height:100%;float: right;"> 
           
 <%branches.forEach(function(branch){%>
             
   <div class="col col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     
-    <div style="border:solid 1px #ccc;margin-top:20px;">
-      <i class="fa fa-university" style="font-size:70px;margin-top:50px"></i>
-         <p><strong style="color:black;font-size:20px">
+    <div style="background-color:#e8e8e8;margin-top: 20px;padding-bottom: 20px">
+     <div style="background: url(https://i.imgur.com/jzqoVLO.jpg);
+     height: 200px;width: 100%;background-size: cover;"></div>
+         <p style="margin-left: 10px"><strong style="color:black;font-size:25px">
       <%=branch.BranchName%></strong></p><br>
-    <span style="font-size:17px">
-      <span style="color:blue">Location : </span><%=branch.Location%></span><br><br><br>
+    <span style="font-size:16px;margin-left: 10px">
+      <span style="background-color:rgba(40,96,144,1);color: white;padding: 5px; border-radius: 12px;font-weight: lighter;font-size: 15px">
+        <i class="fa fa-map-marker"></i> Location </span> : <%=branch.Location%></span><br><br>
     
-    <span style="font-size:15px">
-      <span style="color:green">Vacancy : </span>Not Available</span>
+    <span style="font-size:15px;margin-left: 10px">
+      <span style="background-color:#449D44;color: white;padding: 5px; border-radius: 12px;font-weight: lighter;font-size: 15px">
+        Vacancy</span>Not Available</span>
     </div>
  
         </div>         
