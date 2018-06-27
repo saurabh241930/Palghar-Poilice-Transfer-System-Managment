@@ -15,6 +15,7 @@ var BranchSchema = new mongoose.Schema({
     username: String,
     fullName: String,
     email: String,
+    post:String,
     profileImage: String
   }],
   

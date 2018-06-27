@@ -23,7 +23,9 @@ var Request = require('../models/Request');
 
  var upload = multer({ dest: './uploads/'});
 
-
+router.get("/branchMap",function(req,res){
+  res.render("branchMap")
+})
 
 
 router.get("/imageUpload",function(req,res){
@@ -54,14 +56,8 @@ router.get("/imageUpload",function(req,res){
 
 
 router.get('/',function(req,res){
-      Branch.find({},function(err,branches){
-    if (err) {
-      console.log(err);
-    } else {
-      
-      res.render('index',{branches:branches});
-        }
-  })
+      res.render('infoPage');
+        
 })
 
 router.get('/status',function(req,res){
@@ -130,6 +126,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
+            post:post,
             profileImage: user.profileImage,
             preference: 1,
             requestedBranch: {
@@ -175,6 +172,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
+            post:post,
             profileImage: user.profileImage,
             preference: 2,
             requestedBranch: {
@@ -220,6 +218,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
+            post:post,
             profileImage: user.profileImage,
             preference: 3,
             requestedBranch: {
@@ -265,6 +264,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
+            post:post,
             profileImage: user.profileImage,
             preference: 4,
             requestedBranch: {
@@ -309,6 +309,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
+            post:post,
             profileImage: user.profileImage,
             preference: 5,
             requestedBranch: {
@@ -354,6 +355,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
+            post:post,
             profileImage: user.profileImage,
             preference: 6,
             requestedBranch: {
@@ -398,6 +400,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: user.Location,
             email: user.email,
+            post:post,
             profileImage: user.profileImage,
             preference: 7,
             requestedBranch: {
@@ -443,6 +446,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
+            post:post,
             profileImage: user.profileImage,
             preference: 8,
             requestedBranch: {
@@ -488,6 +492,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
+            post:post,
             profileImage: user.profileImage,
             preference: 9,
             requestedBranch: {
@@ -533,6 +538,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
+            post:post,
             profileImage: user.profileImage,
             preference: 10,
             requestedBranch: {
@@ -718,6 +724,7 @@ router.post('/register',function(req, res) {
     username: req.body.username,
     fullName: req.body.fullName,
        email: req.body.email,
+       post:req.body.post,
     Location:branch.Location,
   currentBranch:{
            id:branch._id,
@@ -741,13 +748,14 @@ router.post('/register',function(req, res) {
           username:user.username,
           fullName:user.fullName,
           email:user.email,
+          post:user.post,
           profileImage:user.profileImage
         } 
         
         branch.Members.push(newMember);
          branch.save()
          
-         res.redirect('/');
+         res.redirect('/login');
   })
 
       
@@ -765,9 +773,16 @@ router.post('/register',function(req, res) {
 
 
 /////////////////////Login route///////////////////////////
-// router.get('/login',function(req,res){
-// res.render('login');
-// });
+router.get('/login',function(req,res){
+  Branch.find({},function(err,branches){
+    if (err) {
+      console.log(err);
+    } else {
+      
+      res.render('index',{branches:branches});
+        }
+  })
+});
 
 //login logic
 // app.post('/login',middleware,callback)

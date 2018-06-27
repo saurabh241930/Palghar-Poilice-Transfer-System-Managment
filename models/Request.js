@@ -13,6 +13,7 @@ var RequestSchema = new mongoose.Schema({
     Location:String,
     branch: String,
     email: String,
+    post:String,
     profileImage: String,
     preference:Number,
     type:String,
