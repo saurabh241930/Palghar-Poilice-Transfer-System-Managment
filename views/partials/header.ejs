@@ -66,10 +66,13 @@
           <div class="btn-group-vertical" >
 
 
+
 <% var currentDate = new Date()%>
- <%if(currentUser.nextApplicableDate.getTime() < currentDate.getTime()){%>
+ <%if(currentUser.nextApplicableDate.getTime() < currentDate.getTime() || currentUser.nextApplicableDate.getTime() == currentDate.getTime()){%>
  <a style="border-radius: 0px" href='/apply' id="Apply" type="button" class="btn btn-primary btn-lg">Apply <i class="fa fa-arrow-right"></i></a>
 <%}%>
+
+
 
 
 
