@@ -1,4 +1,245 @@
- <a style="border-radius: 0px" href="/branchMap" type="button" class="btn btn-primary btn-lg">Branch Map <i class="fa fa-arrow-left"i></a>
- 	<a style="border-radius: 0px" href="/login" type="button" class="btn btn-primary btn-lg">Login</a>
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ 	    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:700" rel="stylesheet">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
+ </head>
+
+
+<style type="">
+	/* Created by Filipe Pina
+ * Specific styles of signin, register, component
+ */
+/*
+ * General styles
+ */
+#playground-container {
+    height: 500px;
+    overflow: hidden !important;
+    -webkit-overflow-scrolling: touch;
+}
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #2d2d2d;
+ 	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+	    overflow-y: hidden; 
+overflow-x: hidden; 
+}
+
+.main{
+ 	margin:50px 15px;
+}
+
+h1.title { 
+	font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+.form-control {
+    height: auto!important;
+padding: 8px 12px !important;
+}
+.input-group {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+#button {
+    border: 1px solid #ccc;
+    margin-top: 28px;
+    padding: 6px 12px;
+    color: #666;
+    text-shadow: 0 1px #fff;
+    cursor: pointer;
+    -moz-border-radius: 3px 3px;
+    -webkit-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    -moz-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    background: #f5f5f5;
+    background: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+    background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
+}
+.main-center{
+ 	margin-top: 30px;
+ 	float:left;
+ 	max-width: 400px;
+    padding: 10px 40px;
+	background:#009edf;
+	    color: #FFF;
+    text-shadow: none;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+
+}
+span.input-group-addon i {
+    color: #009edf;
+    font-size: 17px;
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+</style>
+
+ <body>
+ 	<div class="row">
+ 			<div class="col col-xl-8 col-lg-8" style="height: 750px;background-color: #2d2d2d;">
+
+ 				<div style="
+ 				height: 600px;
+ 				width: 900px;
+ 				margin:0 auto;
+ 				margin-top: 70px;
+ 				border-radius:2px;
+ 				">
+ 					<p><span style="font-family: 'Poppins', sans-serif;
+ 					background-color: green;
+ 					color: white;
+ 					padding: 10px;
+ 					border-radius: 3px;
+ 					font-size: 30px">About <i class="fa fa-question-circle" aria-hidden="true"></i> / याबद्दल :</span></p><br>
+ 					<div style="background-color: rgba(256,256,256,0.1);height: 500px;width:85%px;margin:0 auto;border-radius: 2px;padding: 20px">
+ 					<p style="color: white;font-family: 'Khula', sans-serif;font-size: 20px">पहेला एवम् कुशलता बातसमय खरिदने प्राथमिक होभर जिसकी अधिकार प्रमान विश्वव्यापि नवंबर लोगो देकर व्यवहार स्वतंत्रता बढाता भीयह संदेश सहायता व्यवहार हमेहो। प्रौध्योगिकी अधिक औषधिक एछित मुख्य विनिमय हार्डवेर केन्द्रिय संस्था कम्प्युटर व्याख्यान जिवन जानते हैं। जिसकी उद्योग सहायता <br>हमेहो। प्रौध्योगिकी अधिक औषधिक एछित मुख्य विनिमय हार्डवेर केन्द्रिय संस्था कम्प्युटर व्याख्यान जिवन जानते हैं। जिसकी उद्योग सहायता 
+
+नयेलिए दोषसके हमारी समाज सुनत सहयोग विज्ञान दस्तावेज गोपनीयता गटको ध्येय ऎसाजीस आंतरकार्यक्षमता समजते करके परिवहन सुविधा प्राधिकरन उपयोगकर्ता पुष्टिकर्ता लक्षण उनको बनाकर ।क अधिकार तकरीबन सुचना यधपि एसलिये बेंगलूर ध्वनि</p><br><br>
+
+
+<p style="color: white;font-family: 'Khula', sans-serif;font-size: 20px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+ 				</div>
+ 				</div>
+
+ 			 <a style="margin-left: 55px" href="/branchMap" class="btn btn-danger btn-lg"><strong>Explore Branch Map <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></strong></a>
+
+ 				
+ 		 
+ 	</div>
+
+ 	<div class="col col-xl-4 col-lg-4" style="height: 750px;background-color:#2d2d2d">
+ 	<div class="container">
+			<div class="row main">
+				<div class="main-login main-center" style="background-color: black;padding: 50px">
+               
+               <h1 style="text-align: center;"><strong>PPTS</strong></h1>
+               <p style="font-weight: lighter;
+               text-align: center;
+               font-size: 14px;color:grey">
+               पालघर पोलीस  ट्रान्सफर सिस्टिम </p>
+               <br>
+
+				<h5>Select your region and enter your password</h5>
+					<form class="" method="post" action="/login">
+						
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Enter your Registered No.</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="password"  placeholder="Enter your Phone No."/>
+								</div>
+							</div>
+						</div>
+
+
+						
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<button class="btn btn-success btn-lg btn-block"><strong>LOGIN</strong></button>
+						</div>
+						<a href="/register">Register</a>
+						<strong class="pull-right" ca>Forgot<a href="/forgot"> Password?</a></strong>
+						<br><br>
+						<a href="/"><i class="fa fa-arrow-left"></i> Back</a>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+
+		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+ 	</div>
+ 	</div>
+ 
+ 
+ </body>
+ </html>
+
+
 
 
