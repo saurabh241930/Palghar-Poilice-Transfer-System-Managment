@@ -1,17 +1,18 @@
-<form action="/createBranch" method="POST">
+<form action="/createBranch" method="POST" enctype="multipart/form-data">
   <select name="Location" placeholder="Location">
      
   <option value="Vasai">Vasai</option>
-  <option value="Nalasophara">Nalasophara</option>
+  <option value="Nalasopara">Nalasopara</option>
   <option value="Virar">Virar</option>
-  <option value="Vaitarna">Vaitarna</option>
-  <option value="Saphale">Saphale</option>
-  <option value="Kelva Road">Kelva Road</option>
+  <option value="Boisar">Boisar</option>
+  <option value="Dahanu">Dahanu</option>
   <option value="Palghar">Palghar</option>
+  <option value="Jawahar">Jawahar</option>
 
 </select>
 
   <input type="text" name="BranchName" placeholder="Branch Name">
   <input type="number" name="TotalSeats" placeholder="Total Seats">
+  <input style="margin:0 auto"  type="file" name="file"  ></input>
   <button>Submit</button>
 </form>

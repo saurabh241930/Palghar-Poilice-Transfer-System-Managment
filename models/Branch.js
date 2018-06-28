@@ -7,6 +7,7 @@ var BranchSchema = new mongoose.Schema({
   BranchName: String,
   TotalSeats: Number,
   Vacancies: Number,
+  BranchPhoto:String,
   Members: [{
     id: {
       type: mongoose.Schema.Types.ObjectId,

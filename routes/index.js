@@ -591,13 +591,13 @@ router.get('/branches/Vasai',function(req,res){
   })
 })
 
-router.get('/branches/Nalasophara',function(req,res){
-      Branch.find({'Location':'Nalasophara'},function(err,branches){
+router.get('/branches/Nalasopara',function(req,res){
+      Branch.find({'Location':'Nalasopara'},function(err,branches){
     if (err) {
       console.log(err);
     } else {
       
-      res.render('branchesPage',{branches:branches,location:"Nalasophara"});
+      res.render('branchesPage',{branches:branches,location:"Nalasopara"});
         }
   })
 })
@@ -613,35 +613,35 @@ router.get('/branches/Virar',function(req,res){
   })
 })
 
-router.get('/branches/Vaitarna',function(req,res){
-      Branch.find({'Location':'Vaitarna'},function(err,branches){
+router.get('/branches/Boisar',function(req,res){
+      Branch.find({'Location':'Boisar'},function(err,branches){
     if (err) {
       console.log(err);
     } else {
       
-      res.render('branchesPage',{branches:branches,location:"Vaitarna"});
+      res.render('branchesPage',{branches:branches,location:"Boisar"});
         }
   })
 })
 
-router.get('/branches/Saphale',function(req,res){
-      Branch.find({'Location':'Saphale'},function(err,branches){
+router.get('/branches/Dahanu',function(req,res){
+      Branch.find({'Location':'Dahanu'},function(err,branches){
     if (err) {
       console.log(err);
     } else {
       
-      res.render('branchesPage',{branches:branches,location:"Saphale"});
+      res.render('branchesPage',{branches:branches,location:"Dahanu"});
         }
   })
 })
 
-router.get('/branches/KelvaRoad',function(req,res){
-      Branch.find({'Location':'KelvaRoad'},function(err,branches){
+router.get('/branches/Jawahar',function(req,res){
+      Branch.find({'Location':'Jawahar'},function(err,branches){
     if (err) {
       console.log(err);
     } else {
       
-      res.render('branchesPage',{branches:branches,location:"KelvaRoad"});
+      res.render('branchesPage',{branches:branches,location:"Jawahar"});
         }
   })
 })
@@ -804,12 +804,16 @@ router.get('/createBranch', function(req, res) {
   res.render('addBranch')
 });
 
-router.post('/createBranch', function(req, res) {
+router.post('/createBranch', upload.single('file'),function(req, res) {
+
+cloudinary.uploader.upload(req.file.path,
+    function(result){
 
   var newBranch = {
     Location: req.body.Location,
     BranchName: req.body.BranchName,
     TotalSeats: req.body.TotalSeats,
+    BranchPhoto : result.secure_url
   }
  
   Branch.create(newBranch,function(err,branch){
@@ -818,6 +822,7 @@ router.post('/createBranch', function(req, res) {
     } else {
       res.redirect("/createBranch")
     }
+  })
   })
   
 });
