@@ -23,11 +23,9 @@
     
     <div class="row">
       
-      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:#2d2d2d;
-                                                                            height:100%;
+      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:#2d2d2d;                                                           
                                                                             text-align:center;
                                                                             font-family: 'Cabin', sans-serif;
-                                                                            position:fixed; 
                                                                             border-right:solid 1px #ccc
                                                                             ">
         <div class="col col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-12" style=";background-color:#C9302C;width:107%">
@@ -35,10 +33,10 @@
           <p style="font-weight: lighter;font-size: 14px;color: #ccc">पालघर पोलीस  ट्रान्सफर सिस्टिम </p>
         </div>
 
-    <form class="form-inline pull right" >
+    <form class="form-inline pull right"style="z-index: 0">
       <input class="form-control " name="search" type="search" placeholder="Search by area ..." aria-label="Search" 
       style="width:90%;height: 40px;margin-top:10px;">
-      <button class="btn btn-primary  " type="submit" style="height: 40px;margin-top: 10px"><strong>Search</strong></button>
+      <button class="btn btn-primary  " type="submit" style="height: 30px;margin-top: 10px;"><strong>Search</strong></button>
     </form>
 
 
@@ -46,11 +44,11 @@
     <ul class="list-group">
       <%branches.forEach(function(branch){%>
   <li class="list-group-item list-group-item-primary" style="font-weight: lighter;
-  font-size: 13px;
+  font-size: 20px;
   background-color:#2d2d2d;
-  color: white;
+  
   border-radius: 1px">
-   <%=branch.BranchName%>
+   <a style='color: white;' href="/branch/<%=branch._id%>"><%=branch.BranchName%></a>
     <span class="badge badge-danger badge-pill"><%=branch.Members.length%></span>
   </li>
   <%})%>
@@ -78,10 +76,8 @@ border-right:solid 20px #2d2d2d ">
 
 
 </div>
-      </div>
      
         
-      </div>
       
         <div class="col col-xl-9 col-lg-10 col-md-9 col-sm-9 col-xs-12" style="background-color:;
                                                                             height:1200px;
@@ -136,11 +132,13 @@ border-right:solid 20px #2d2d2d ">
     </tbody>
   </table>
  
-    <div class="col-lg-12" style="text-align: center;">
+        <div class="col-lg-12" style="text-align: center;">
           <% if( noMatch !== null){%>
           <h1><%= noMatch %></h1>
           <%}%>
         </div>
+
+        
  
 <% include ./partials/footer %>
 
@@ -148,7 +146,12 @@ border-right:solid 20px #2d2d2d ">
   
 </html>
  
-
+<style>
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+</style>
 
 
 

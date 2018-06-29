@@ -18,6 +18,8 @@ var UserSchema = new mongoose.Schema({
 
   Location:String,
 
+ 
+
   requestStatus:{
     requestAccepted:{type:Boolean,default:false},
     requestAcceptedOn:Date,
