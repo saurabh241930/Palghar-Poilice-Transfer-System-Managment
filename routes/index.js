@@ -126,7 +126,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
-            post:post,
+            post:user.post,
             profileImage: user.profileImage,
             preference: 1,
             requestedBranch: {
@@ -172,7 +172,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
-            post:post,
+            post:user.post,
             profileImage: user.profileImage,
             preference: 2,
             requestedBranch: {
@@ -218,7 +218,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
-            post:post,
+            post:user.post,
             profileImage: user.profileImage,
             preference: 3,
             requestedBranch: {
@@ -264,7 +264,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
-            post:post,
+            post:user.post,
             profileImage: user.profileImage,
             preference: 4,
             requestedBranch: {
@@ -309,7 +309,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
-            post:post,
+            post:user.post,
             profileImage: user.profileImage,
             preference: 5,
             requestedBranch: {
@@ -355,7 +355,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
-            post:post,
+            post:user.post,
             profileImage: user.profileImage,
             preference: 6,
             requestedBranch: {
@@ -400,7 +400,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: user.Location,
             email: user.email,
-            post:post,
+            post:user.post,
             profileImage: user.profileImage,
             preference: 7,
             requestedBranch: {
@@ -446,7 +446,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
-            post:post,
+            post:user.post,
             profileImage: user.profileImage,
             preference: 8,
             requestedBranch: {
@@ -492,7 +492,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
-            post:post,
+            post:user.post,
             profileImage: user.profileImage,
             preference: 9,
             requestedBranch: {
@@ -538,7 +538,7 @@ router.post('/apply/:id', function(req, res) {
             fullName: user.fullName,
             Location: branch.Location,
             email: user.email,
-            post:post,
+            post:user.post,
             profileImage: user.profileImage,
             preference: 10,
             requestedBranch: {

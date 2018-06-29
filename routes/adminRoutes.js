@@ -41,7 +41,7 @@ router.get("/branch/:id",function(req, res){
   //   if(err){
   //     console.log(err)
   //   }else{
-      res.render("particularBranchOfficer",{branch:branches});
+      res.render("particularBranchOfficer",{branches:branches});
 //     }
 //   })
  }
@@ -203,6 +203,7 @@ router.post("/acceptRequest/:id",isLoggedIn,function(req,res){
                       username:user.username,
                       fullName:user.fullName,
                       email:user.email,
+                      post:user.post,
                       profileImage:user.profileImage
                     }
 
