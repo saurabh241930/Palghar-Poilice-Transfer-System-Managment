@@ -14,28 +14,83 @@
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
   </head>
   
   <body>
 
 
+    
+    <div class="row">
+      
+      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:#2d2d2d;                                                           
+                                                                            text-align:center;
+                                                                            font-family: 'Cabin', sans-serif;
+                                                                            border-right:solid 1px #ccc
+                                                                            ">
+        <div class="col col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-12" style=";background-color:#C9302C;width:107%">
+          <h2 style="color: white"><strong>PPTS</strong></h2>
+          <p style="font-weight: lighter;font-size: 14px;color: #ccc">पालघर पोलीस  ट्रान्सफर सिस्टिम </p>
+        </div>
 
-<table class="table table-bordered" id="table">
+      <button class="btn btn-primary  " type="submit" style="height: 30px;margin-top: 10px;"><strong>Request</strong></button>
+    
 
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Position</th>
-      </tr>
-    </thead>
-    <tbody>
-    	<%branches.Members.forEach(function(member){%>
-      <tr>
-        <td><%=member.fullName%></td>
-        <td><%=member.email%></td>
-        <td><%=member.post%></td>
-      </tr>
-      <%})%>
-    </tbody>
-  </table>
+
+   <div style="height:600px;overflow-y: scroll;">
+       <ul class="list-group">
+      <%branches.forEach(function(branch){%>
+  <li class="list-group-item list-group-item-primary" style="font-weight: lighter;
+  font-size: 20px;
+  background-color:rgba(256,256,256,0.1);
+  
+  border-radius: 1px">
+   <a style='color: white;' href="/branch/<%=branch._id%>"><%=branch.BranchName%></a>
+    <span class="badge badge-danger badge-pill"><%=branch.Members.length%></span>
+  </li>
+  <%})%>
+</ul>
+   </div>
+  
+
+
+
+
+
+</div>
+     
+        
+      
+        <div class="col col-xl-9 col-lg-10 col-md-9 col-sm-9 col-xs-12" style="background-color:;
+                                                                            height:1200px;
+                                                                            float:right;
+                                                                            font-family: 'Cabin', sans-serif;
+                                                                           ">
+         
+       
+      
+
+
+ 
+      
+
+        
+ 
+<% include ./partials/footer %>
+
+ </body>
+  
+</html>
+ 
+<style>
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+</style>
+
+
+
+
+
+

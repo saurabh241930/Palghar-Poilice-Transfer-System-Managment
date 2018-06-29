@@ -40,12 +40,12 @@
     </form>
 
 
-
-    <ul class="list-group">
+   <div style="height:600px;overflow-y: scroll;">
+       <ul class="list-group">
       <%branches.forEach(function(branch){%>
   <li class="list-group-item list-group-item-primary" style="font-weight: lighter;
   font-size: 20px;
-  background-color:#2d2d2d;
+  background-color:rgba(256,256,256,0.1);
   
   border-radius: 1px">
    <a style='color: white;' href="/branch/<%=branch._id%>"><%=branch.BranchName%></a>
@@ -53,6 +53,8 @@
   </li>
   <%})%>
 </ul>
+   </div>
+  
 
         <!-- <div style="margin-top: 10px;">
 
