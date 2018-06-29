@@ -33,15 +33,16 @@ router.get('/authorityRegistration',function(req,res){
   })
 
 router.get("/branch/:id",function(req, res){
-  Branch.findById(req.params.id,function(err,branch){
+  Branch.find({},function(err,branches) {
+     if(err){
+      console.log(err);
+    }else{
+  Branch.findById(req.params.id,function(err,foundBranch){
     if(err){
     console.log(err)
 } else{
-   Branch.find({},function(err,branches) {
-     if(err){
-      console.log(err)
-    }else{
-      res.render("particularBranchOfficer",{branches:branches,branch:branch});
+   
+      res.render("particularBranchOfficer",{branches:branches,foundBranch:foundBranch});
    }
  })
  }

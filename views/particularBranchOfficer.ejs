@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-   <link rel="stylesheet" href="style.css">
+   
   </head>
   
   <body>
@@ -23,12 +23,13 @@
     <!--  -->
     <div class="row">
       
-      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:#2d2d2d;                                                           
+      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:rgba(0,0,0,0);                                                                    position: fixed;
                                                                             text-align:center;
                                                                             font-family: 'Cabin', sans-serif;
-                                                                            border-right:solid 1px #ccc
+                                                                            border-right:solid 1px #ccc;
+                                                                             box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
                                                                             ">
-        <div class="col col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-12" style=";background-color:#C9302C;width:107%">
+        <div class="col col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-12" style=";background-color:#2d2d2d;width:107%;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);">
           <h2 style="color: white"><strong>PPTS</strong></h2>
           <p style="font-weight: lighter;font-size: 14px;color: #ccc">पालघर पोलीस  ट्रान्सफर सिस्टिम </p>
         </div>
@@ -37,15 +38,17 @@
     
 
 
-   <div style="height:600px;overflow-y: scroll;">
+   <div style="height:700px;overflow-y: scroll;background-color:white ">
        <ul class="list-group">
       <%branches.forEach(function(branch){%>
   <li class="list-group-item list-group-item-primary" style="font-weight: lighter;
   font-size: 20px;
-  background-color:rgba(256,256,256,0.1);
-  
+  background-color:rgba(0,0,0,0.1);
+  color: black;
+  margin-top: 30px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
   border-radius: 1px">
-   <a style='color: white;' href="/branch/<%=branch._id%>"><%=branch.BranchName%></a>
+   <a style="color: black;font-size: 15px;font-weight: lighter;" href="/branch/<%=branch._id%>"><%=branch.BranchName%></a>
     <span class="badge badge-danger badge-pill"><%=branch.Members.length%></span>
   </li>
   <%})%>
