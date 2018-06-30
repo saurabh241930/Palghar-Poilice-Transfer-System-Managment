@@ -23,32 +23,37 @@
     
     <div class="row">
       
-      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:#2d2d2d;                                                           
+      <div class="col col-xl-3 col-lg-2 col-md-3 col-sm-3 col-xs-12" style="background-color:white;                                                                    position: fixed;
                                                                             text-align:center;
                                                                             font-family: 'Cabin', sans-serif;
                                                                             border-right:solid 1px #ccc
                                                                             ">
-        <div class="col col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-12" style=";background-color:#C9302C;width:107%">
+        <div class="col col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-12" style=";background-color:#2d2d2d;width:107%">
           <h2 style="color: white"><strong>PPTS</strong></h2>
           <p style="font-weight: lighter;font-size: 14px;color: #ccc">पालघर पोलीस  ट्रान्सफर सिस्टिम </p>
         </div>
 
     <form class="form-inline pull right"style="z-index: 0">
       <input class="form-control " name="search" type="search" placeholder="Search by area ..." aria-label="Search" 
-      style="width:90%;height: 40px;margin-top:10px;">
-      <button class="btn btn-primary  " type="submit" style="height: 30px;margin-top: 10px;"><strong>Search</strong></button>
+      style="width:90%;height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color: #e8e8e8;border-radius: 0px"><br>
+      <button class="btn btn-primary btn-lg " type="submit" style="border-radius: 0px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);margin-top:20px">
+      <i class="fa fa-search"></i> Search</button>
     </form>
 
 
-   <div style="height:600px;overflow-y: scroll;">
+  <div style="height:700px;overflow-y: scroll;background-color:white ;width: 106%">
        <ul class="list-group">
       <%branches.forEach(function(branch){%>
   <li class="list-group-item list-group-item-primary" style="font-weight: lighter;
+  margin-right: 15px;
+  margin-left: 15px;
   font-size: 20px;
-  background-color:rgba(256,256,256,0.1);
-  
+  background-color:rgba(0,0,0,0);
+  color: black;
+  margin-top: 30px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
   border-radius: 1px">
-   <a style='color: white;' href="/branch/<%=branch._id%>"><%=branch.BranchName%></a>
+   <a style="color: black;font-size: 15px;font-weight: lighter;" href="/branch/<%=branch._id%>"><%=branch.BranchName%></a>
     <span class="badge badge-danger badge-pill"><%=branch.Members.length%></span>
   </li>
   <%})%>
