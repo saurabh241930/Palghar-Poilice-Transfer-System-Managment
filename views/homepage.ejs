@@ -58,13 +58,26 @@
          <p style="margin-left: 10px"><strong style="color:black;font-size:25px">
       <%=branch.BranchName%></strong></p><br>
     <span style="font-size:16px;margin-left: 10px">
-      <span style="background-color:rgba(40,96,144,1);color: white;padding: 5px; border-radius: 12px;font-weight: lighter;font-size: 15px">
+      <% var splitName = branch.BranchName.split("")%>
+  <% var nameLength = splitName.length%>
+  <% var trimmedName = branch.BranchName.slice(3,nameLength+1)%>
+      <span class="btn btn-info" 
+      data-toggle="collapse" data-target="#<%=trimmedName%>" style="background-color:rgba(40,96,144,1);color: white;padding: 5px; border-radius: 12px;font-weight: lighter;font-size: 15px">
         <i class="fa fa-map-marker"></i> Location </span> : <%=branch.Location%></span><br><br>
+   
+        <div id="<%=trimmedName%>" class="collapse">
+   
+<iframe width="100%" height="400px" frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/search?q=<%=trimmedName%>+police+station&key=AIzaSyAZZpRYzIOkzB4TOTmDUK7IYo8073KUnLM" 
+allowfullscreen></iframe>
+  </div>
     
     <span style="font-size:15px;margin-left: 10px">
       <span style="background-color:#449D44;color: white;padding: 5px; border-radius: 12px;font-weight: lighter;font-size: 15px">
         Vacancy</span>Not Available</span>
     </div>
+
+
  
         </div>         
 
