@@ -113,63 +113,46 @@ router.post('/authorize', passport.authenticate("local", {
 
 
 router.get('/regionwiseRequests',function(req,res){
- var noMatch = null;
-  if(req.query.search){
-     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-    User.findById(req.user._id,function(err,user){
-  if (err) {
-    console.log(err)
-  } else {
-     Request.find({"requestedBranch.BranchName":regex}).sort({preference:1}).exec(function(err,requests){
+  User.find({"requestInProcess":true}).exec(function(err,users){
     if (err) {
-      console.log(err);
+      throw err;
     } else {
-       
-        Branch.find({}).exec(function(err,branches){
+      Branch.find({},function(err,branches){
         if (err) {
-           console.log(err);
+          throw err;
         } else {
-        if(requests.length < 1){
-                noMatch = "no result found please check the spell";
-        }
-         res.render("regionwiseRequests",{requests:requests,branches:branches,noMatch:noMatch})
+          res.render("regionwiseRequests",{users:users,branches:branches})
         }
       })
-      
+    }
+  })
+})
+ 
+ 
+
+
+router.get("/request/:id",function (req,res) {
+
+
+
+Request.find({"id":req.params.id}).exec(function(err,requests){
+  if (err) {
+    throw err;
+  } else {
+    User.findById(req.params.id,function(err,user){
+      if (err) {
+        throw err;
+      } else {
+         res.render("particularOfficerRequests",{requests:requests,user:user})
       }
-  })
+    })
+   
   }
-})
-  }else{
-User.findById(req.user._id,function(err,user){
-  if (err) {
-    console.log(err)
-  } else {
-     Request.find({}).sort({preference:1}).exec(function(err,requests){
-    if (err) {
-      console.log(err);
-    } else {
-        Branch.find({}).exec(function(err,branches){
-        if (err) {
-           console.log(err);
-        } else {
-          
-         res.render("regionwiseRequests",{requests:requests,branches:branches,noMatch:noMatch})
-        }
-      })
-      
-       }
-  })
-  }
-})
-}
-  
 })
 
 
-function escapeRegex(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-}
+})
+
 
 
 

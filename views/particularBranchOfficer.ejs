@@ -103,11 +103,16 @@ allowfullscreen></iframe>
             
  <div class="col col-xl-10 col-lg-10 col-md-4 col-sm-6 col-xs-12" style="float: right;">
     
-    <div style="border:solid 1px #ccc;margin-top:50px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2)">
-      <div style="background: url(<%=member.profileImage%>);
-     height:200px;width:50%;background-size: cover;"></div>
-         <p><strong style="color:black;font-size:20px">
-      <%=member.fullName%></strong></p><br>
+    <h1 style="text-align: center;color: grey">Branch Officers</h1>
+
+
+    <div style="border:solid 1px #ccc;margin-top:50px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);height: 150px">
+      <img src="<%=member.profileImage%>" style="height: 150px;width: 150px;float: left;border-right:solid 1px #ccc;">
+  <p style="font-size: 30px;font-family: 'Cabin', sans-serif;"><strong><%=member.fullName%></strong><br><br>
+    <span style="color:grey;font-size: 20px">POST :</span><span style="color:black;font-size: 20px">
+      <%=member.post%></span>
+  </p>
+
 
     </div>
  
