@@ -113,21 +113,46 @@ router.post('/authorize', passport.authenticate("local", {
 
 
 router.get('/regionwiseRequests',function(req,res){
-  User.find({"requestInProcess":true}).exec(function(err,users){
-    if (err) {
-      throw err;
-    } else {
-      Branch.find({},function(err,branches){
-        if (err) {
-          throw err;
-        } else {
-          res.render("regionwiseRequests",{users:users,branches:branches})
+   var noMatch = null;
+  if(req.query.search){
+     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+     User.find({fullName:regex,"requestInProcess":true}).exec(function(err,users){
+      if (err) {
+        throw err;
+      } else {
+        Branch.find({},function(err,branches){
+          if (err) {
+            throw err;
+          } else {
+            if(users.length < 1){
+                noMatch = "no result found please check the spell";
         }
-      })
-    }
-  })
+            res.render("regionwiseRequests",{users:users,branches:branches,noMatch:noMatch})
+          }
+        })
+      }
+    })
+  }else{
+      User.find({"requestInProcess":true}).exec(function(err,users){
+      if (err) {
+        throw err;
+      } else {
+        Branch.find({},function(err,branches){
+          if (err) {
+            throw err;
+          } else {
+            res.render("regionwiseRequests",{users:users,branches:branches,noMatch:noMatch})
+          }
+        })
+      }
+    })
+
+  }
+  
 })
- 
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
  
 
 
