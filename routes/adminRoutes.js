@@ -41,8 +41,15 @@ router.get("/branch/:id",function(req, res){
     if(err){
     console.log(err)
 } else{
+   User.find({"currentBranch.id":req.params.id}).exec(function(err,users){
+    if (err) {
+      throw err;
+    } else {
+      res.render("particularBranchOfficer",{branches:branches,foundBranch:foundBranch,users:users});
+    }
+   })
    
-      res.render("particularBranchOfficer",{branches:branches,foundBranch:foundBranch});
+      
    }
  })
  }
@@ -127,6 +134,7 @@ router.get('/regionwiseRequests',function(req,res){
             if(users.length < 1){
                 noMatch = "no result found please check the spell";
         }
+         users = users.reverse()
             res.render("regionwiseRequests",{users:users,branches:branches,noMatch:noMatch})
           }
         })
@@ -141,6 +149,7 @@ router.get('/regionwiseRequests',function(req,res){
           if (err) {
             throw err;
           } else {
+            users = users.reverse()
             res.render("regionwiseRequests",{users:users,branches:branches,noMatch:noMatch})
           }
         })

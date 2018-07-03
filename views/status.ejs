@@ -75,12 +75,21 @@
       
 
       </div>
-      <div class="col col-lg-12">
-           <div class="alert alert-danger" style="background-color: red;color: white">
-      Your request is still in process <i class="fa fa-exclamation"></i>
-      
-    </div> 
-      </div>
+
+<div class="col col-lg-9">
+
+       <div class="alert alert-danger" role="alert" style="margin-top:10px">
+  <p style="font-size: 40px">Your Request is successfully sent on 
+    <span style="color:white;background-color:red
+    ;font-size:20px;padding: 10px"><%=currentUser.requestSubmittedOn.toDateString()%></span><br>
+  
+  </p>
+         
+</div>      
+
+
+
+ 
 
       <%}%>
 

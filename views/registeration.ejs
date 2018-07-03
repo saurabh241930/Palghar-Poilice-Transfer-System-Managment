@@ -38,7 +38,7 @@
 body, html{
      height: 100%;
     background-repeat: no-repeat;
-    background-color: black;
+    background-color:#e8e8e8;
     font-family: 'Oxygen', sans-serif;
         background-size: cover;
 }
@@ -134,8 +134,11 @@ span.input-group-addon i {
     <body>
         <div class="container">
             <div class="row main">
-                <div class="main-login main-center">
-                <h5>Sign up once and watch any of our free demos.</h5>
+                <div class="main-login main-center" style="background-color: #2d2d2d">
+               <p style="font-weight: lighter;
+               text-align: center;
+               font-size:24px;color: #ccc">
+               पालघर पोलीस  ट्रान्सफर सिस्टिम <br>( Registration )</p>
                     <form class="" method="post" action="/register">
                         
                         <div class="form-group">
@@ -152,7 +155,7 @@ span.input-group-addon i {
                             <label for="email" class="cols-sm-2 control-label">Your Email</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-at" aria-hidden="true"></i></span>
                                     <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
                                 </div>
                             </div>
@@ -162,18 +165,28 @@ span.input-group-addon i {
                             <label for="username" class="cols-sm-2 control-label">Phone Number</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
                                     <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Phone Number"/>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="username" class="cols-sm-2 control-label">Post</label>
+                            <label for="post" class="cols-sm-2 control-label">Select Post</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="post" id="username"  placeholder="Enter your post"/>
+                                    <select class="form-control" id="post" name="post">
+                                          
+                                          <option value ="A.S.P">A.S.P</option>
+                                          <option value ="D.S.P">D.S.P</option>
+                                          <option value ="P.I">P.I</option>
+                                          <option value ="A.P.I">A.P.I</option>
+                                          <option value ="S.I">S.I</option>
+                                          <option value ="A.S.I">A.S.I</option>
+                                          <option value ="H.C">H.C</option>
+                                          <option value ="P.C">P.C</option>
+                                         
+                                        </select>
                                 </div>
                             </div>
                         </div>

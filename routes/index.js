@@ -44,6 +44,7 @@ router.get("/imageUpload",function(req,res){
         } else {
           user.profileImage = result.secure_url;
           user.save()
+          res.redirect("/homepage")
         }
       })
       
@@ -755,7 +756,7 @@ router.post('/register',function(req, res) {
         branch.Members.push(newMember);
          branch.save()
          
-         res.redirect('/login');
+         res.redirect('/');
   })
 
       
