@@ -108,7 +108,7 @@
           
   <div class="col col-lg-12" style="text-align:center">
     
-    <span style="float:left;font-size:16px"> <strong>Request Initiated <br><span style="color: grey">( 16 June 2018 )</span></strong></span>
+    <span style="float:left;font-size:16px"> <strong>Request Initiated <br><span style="color: grey">(<%=currentUser.requestSubmittedOn.toDateString()%>)</span></strong></span>
      <span style="font-size:16px"><strong>Request sent successfully</strong></span>
      <span style="float:right;font-size:16px"><strong >Request approved successfully</strong>  </span>
           </div>        
@@ -140,6 +140,22 @@
       
 
       </div>
+
+  <div class="col col-lg-9">
+
+       <div class="alert alert-success" role="alert" style="margin-top:10px">
+  <p style="font-size: 40px">Your Request is successfully approved on 
+    <span style="color:white;background-color:green;font-size:30px;padding: 10px"><%=currentUser.requestStatus.requestAcceptedOn.toDateString()%></span><br>
+    for branch <span style="color:white;background-color:black;font-size:30px;padding: 10px"><%=currentUser.requestStatus.requestAcceptedBranchName%></span>
+  </p>
+         
+</div>      
+
+      
+
+      </div>
+
+
       <div class="col col-lg-12">
            <div class="alert alert-danger" style="background-color: green;color: white">
       Your request is approved for <strong><%=currentUser.requestStatus.requestAcceptedBranchName%></strong>
