@@ -26,8 +26,9 @@ var BranchSchema = new mongoose.Schema({
       ref: "Request"
     },
     By:String,
-    preference:Number
-    
+    preference:Number,
+    description:String,
+    specialRequest:String
   }]
   
 

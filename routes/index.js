@@ -574,12 +574,575 @@ router.post('/apply/:id', function(req, res) {
         }
       })
 
+    res.redirect("/status")
+
+
+    }
+  })
+})
+
+
+/////////////////////////////////special request///////////////////////////////////////
+
+
+
+
+
+router.get('/specialApply',function(req,res){
+      Branch.find({},function(err,branches){
+    if (err) {
+      console.log(err);
+    } else {
+      
+      res.render('specialApply',{branches:branches});
+        }
+  })
+})
+
+
+router.post('/specialApply/:id', function(req, res) {
+  User.findById(req.params.id, function(err, user) {
+    if (err) {
+      console.log(err);
+    } else {
+
+       // user.requestInProcess = true;
+       // user.requestSubmittedOn = new Date();
+       // d = user.requestSubmittedOn;
+       // var year = d.getFullYear();
+       // var month = d.getMonth();
+       // var day = d.getDate()
+  
+       // user.nextApplicableDate = new Date(year + 1, month, day)
+
+       // user.save()
+
+      
+
+
+        Branch.findById(req.body.specialRequest, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+        var specialApply = {specialRequest:req.body.specialRequest,description:req.body.description} 
+
+
+
+          Request.create(specialApply, function(err, specialApply) {
+            if (err) {
+              console.log(err)
+            } else {
+
+            
+
+              var requestInBranch = {
+                id: specialApply._id,
+                By:specialApply.fullName,
+                specialRequest: specialApply.specialRequest
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
+
+
+
+
+
+
+      Branch.findById(req.body.preference1, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+          var newRequest = {
+            id: user._id,
+            username: user.username,
+            fullName: user.fullName,
+            Location: branch.Location,
+            email: user.email,
+            post:user.post,
+            profileImage: user.profileImage,
+            preference: 1,
+            requestedBranch: {
+              Location: branch.Location,
+              id: branch._id,
+              BranchName: branch.BranchName
+            }
+          }
+
+
+          Request.create(newRequest, function(err, newestRequest) {
+            if (err) {
+              console.log(err)
+            } else {
+
+            
+
+              var requestInBranch = {
+                id: newestRequest._id,
+                By:newRequest.fullName,
+                preference: newestRequest.preference
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
+      Branch.findById(req.body.preference2, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+          var newRequest = {
+            id: user._id,
+            username: user.username,
+            fullName: user.fullName,
+            Location: branch.Location,
+            email: user.email,
+            post:user.post,
+            profileImage: user.profileImage,
+            preference: 2,
+            requestedBranch: {
+              Location: branch.Location,
+              id: branch._id,
+              BranchName: branch.BranchName
+            }
+          }
+
+
+          Request.create(newRequest, function(err, newestRequest) {
+            if (err) {
+              console.log(err)
+            } else {
+
+             
+
+              var requestInBranch = {
+                id: newestRequest._id,
+                By:newRequest.fullName,
+                preference: newestRequest.preference
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
+      Branch.findById(req.body.preference3, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+          var newRequest = {
+            id: user._id,
+            username: user.username,
+            fullName: user.fullName,
+            Location: branch.Location,
+            email: user.email,
+            post:user.post,
+            profileImage: user.profileImage,
+            preference: 3,
+            requestedBranch: {
+              Location: branch.Location,
+              id: branch._id,
+              BranchName: branch.BranchName
+            }
+          }
+
+
+          Request.create(newRequest, function(err, newestRequest) {
+            if (err) {
+              console.log(err)
+            } else {
+
+      
+
+              var requestInBranch = {
+                id: newestRequest._id,
+                By:newRequest.fullName,
+                preference: newestRequest.preference
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
+      Branch.findById(req.body.preference4, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+          var newRequest = {
+            id: user._id,
+            username: user.username,
+            fullName: user.fullName,
+            Location: branch.Location,
+            email: user.email,
+            post:user.post,
+            profileImage: user.profileImage,
+            preference: 4,
+            requestedBranch: {
+              Location: branch.Location,
+              id: branch._id,
+              BranchName: branch.BranchName
+            }
+          }
+
+
+          Request.create(newRequest, function(err, newestRequest) {
+            if (err) {
+              console.log(err)
+            } else {
+
+
+              var requestInBranch = {
+                id: newestRequest._id,
+                By:newRequest.fullName,
+                preference: newestRequest.preference
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
+      Branch.findById(req.body.preference5, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+          var newRequest = {
+            id: user._id,
+            username: user.username,
+            fullName: user.fullName,
+            Location: branch.Location,
+            email: user.email,
+            post:user.post,
+            profileImage: user.profileImage,
+            preference: 5,
+            requestedBranch: {
+              Location: branch.Location,
+              id: branch._id,
+              BranchName: branch.BranchName
+            }
+          }
+
+
+          Request.create(newRequest, function(err, newestRequest) {
+            if (err) {
+              console.log(err)
+            } else {
+
+        
+
+              var requestInBranch = {
+                id: newestRequest._id,
+                By:newRequest.fullName,
+                preference: newestRequest.preference
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
+      Branch.findById(req.body.preference6, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+          var newRequest = {
+            id: user._id,
+            username: user.username,
+            fullName: user.fullName,
+            Location: branch.Location,
+            email: user.email,
+            post:user.post,
+            profileImage: user.profileImage,
+            preference: 6,
+            requestedBranch: {
+              Location: branch.Location,
+              id: branch._id,
+              BranchName: branch.BranchName
+            }
+          }
+
+
+          Request.create(newRequest, function(err, newestRequest) {
+            if (err) {
+              console.log(err)
+            } else {
+
+
+              var requestInBranch = {
+                id: newestRequest._id,
+                By:newRequest.fullName,
+                preference: newestRequest.preference
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
+      Branch.findById(req.body.preference7, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+          var newRequest = {
+            id: user._id,
+            username: user.username,
+            fullName: user.fullName,
+            Location: user.Location,
+            email: user.email,
+            post:user.post,
+            profileImage: user.profileImage,
+            preference: 7,
+            requestedBranch: {
+              Location: branch.Location,
+              id: branch._id,
+              BranchName: branch.BranchName
+            }
+          }
+
+
+          Request.create(newRequest, function(err, newestRequest) {
+            if (err) {
+              console.log(err)
+            } else {
+
+           
+
+              var requestInBranch = {
+                id: newestRequest._id,
+                By:newRequest.fullName,
+                preference: newestRequest.preference
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
+      Branch.findById(req.body.preference8, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+          var newRequest = {
+            id: user._id,
+            username: user.username,
+            fullName: user.fullName,
+            Location: branch.Location,
+            email: user.email,
+            post:user.post,
+            profileImage: user.profileImage,
+            preference: 8,
+            requestedBranch: {
+              Location: branch.Location,
+              id: branch._id,
+              BranchName: branch.BranchName
+            }
+          }
+
+
+          Request.create(newRequest, function(err, newestRequest) {
+            if (err) {
+              console.log(err)
+            } else {
+
+         
+
+              var requestInBranch = {
+                id: newestRequest._id,
+                By:newRequest.fullName,
+                preference: newestRequest.preference
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
+      Branch.findById(req.body.preference9, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+          var newRequest = {
+            id: user._id,
+            username: user.username,
+            fullName: user.fullName,
+            Location: branch.Location,
+            email: user.email,
+            post:user.post,
+            profileImage: user.profileImage,
+            preference: 9,
+            requestedBranch: {
+              Location: branch.Location,
+              id: branch._id,
+              BranchName: branch.BranchName
+            }
+          }
+
+
+          Request.create(newRequest, function(err, newestRequest) {
+            if (err) {
+              console.log(err)
+            } else {
+
+             
+
+              var requestInBranch = {
+                id: newestRequest._id,
+                By:newRequest.fullName,
+                preference: newestRequest.preference
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
+      Branch.findById(req.body.preference10, function(err, branch) {
+        if (err) {
+          console.log(err)
+        } else {
+
+          var newRequest = {
+            id: user._id,
+            username: user.username,
+            fullName: user.fullName,
+            Location: branch.Location,
+            email: user.email,
+            post:user.post,
+            profileImage: user.profileImage,
+            preference: 10,
+            requestedBranch: {
+              Location: branch.Location,
+              id: branch._id,
+              BranchName: branch.BranchName
+            }
+          }
+
+
+          Request.create(newRequest, function(err, newestRequest) {
+            if (err) {
+              console.log(err)
+            } else {
+
+             
+
+              var requestInBranch = {
+                id: newestRequest._id,
+                By:newRequest.fullName,
+                preference: newestRequest.preference
+              }
+
+              branch.Requests.push(requestInBranch);
+              branch.save()
+              
+
+            }
+          })
+
+
+        }
+      })
+
     res.redirect("/homepage")
 
 
     }
   })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 router.get('/branches/Vasai',function(req,res){
       Branch.find({'Location':'Vasai'},function(err,branches){

@@ -1,0 +1,185 @@
+<% include ./partials/header %>
+
+      
+        <div class="col col-xl-9 col-lg-10 col-md-9 col-sm-9 col-xs-12" style="background-color:;
+                                                                            height:1200px;
+                                                                            float:right;
+                                                                            font-family: 'Cabin', sans-serif;
+                                                                           ">
+          <h1><strong>Apply for Transfer</strong></h1>
+          
+          <p>Select the staion :</p>
+   
+          <div class="col col-xl-9 col-lg-6 col-md-9 col-sm-9 col-xs-12">
+            
+            <form action="/specialApply/<%=currentUser._id%>" method="POST">
+  
+     
+     <div class="col col-xl-6 col-lg-6 col-md-9 col-sm-9 col-xs-12">   
+
+     <div class="form-group">
+    <label for="special apply">special apply</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="special apply" name="specialRequest">
+      <option value="">specialRequest</option>
+    </select>
+  </div>           
+              
+  <div class="form-group">
+    <label for="preference1">Preference 1</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="preference1" name="preference1">
+      <option value=""></option>
+      <%branches.forEach(function(branch){%>
+      <option value ="<%=branch._id%>"><%=branch.BranchName%></option>
+     <%})%>
+    </select>
+  </div>
+   
+   <div class="form-group">
+    <label for="preference2">Preference 2</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="preference2" name="preference2">
+      <option value=""></option>
+      <%branches.forEach(function(branch){%>
+      <option value ="<%=branch._id%>"><%=branch.BranchName%></option>
+     <%})%>
+    </select>
+  </div>  
+              
+              
+     <div class="form-group">
+    <label for="preference3">Preference 3</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="preference3" name="preference3">
+      <option value=""></option>
+      <%branches.forEach(function(branch){%>
+      <option value ="<%=branch._id%>"><%=branch.BranchName%></option>
+     <%})%>
+    </select>
+  </div>             
+              
+  
+    <div class="form-group">
+    <label for="preference4">Preference 4</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="preference4" name="preference4">
+      <option value=""></option>
+      <%branches.forEach(function(branch){%>
+      <option value ="<%=branch._id%>"><%=branch.BranchName%></option>
+     <%})%>
+    </select>
+  </div>              
+        
+     <div class="form-group">
+    <label for="preference5">Preference 5</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="preference5" name="preference5">
+      <option value=""></option>
+      <%branches.forEach(function(branch){%>
+      <option value ="<%=branch._id%>"><%=branch.BranchName%></option>
+     <%})%>
+    </select>
+  </div>             
+    
+  </div>
+      <div class="col col-xl-6 col-lg-6 col-md-9 col-sm-9 col-xs-12">          
+              
+  <div class="form-group">
+    <label for="preference6">Preference 6</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="preference6" name="preference6">
+      <option value=""></option>
+      <%branches.forEach(function(branch){%>
+      <option value ="<%=branch._id%>"><%=branch.BranchName%></option>
+     <%})%>
+    </select>
+  </div>
+   
+   <div class="form-group">
+    <label for="preference7">Preference 7</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="preference7" name="preference7">
+      <option value=""></option>
+      <%branches.forEach(function(branch){%>
+      <option value ="<%=branch._id%>"><%=branch.BranchName%></option>
+     <%})%>
+    </select>
+  </div>  
+              
+              
+     <div class="form-group">
+    <label for="preference8">Preference 8</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="preference8" name="preference8">
+      <option value=""></option>
+      <%branches.forEach(function(branch){%>
+      <option value ="<%=branch._id%>"><%=branch.BranchName%></option>
+     <%})%>
+    </select>
+  </div>             
+              
+  
+    <div class="form-group">
+    <label for="preference9">Preference 9</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="preference9" name="preference9">
+      <option value=""></option>
+      <%branches.forEach(function(branch){%>
+      <option value ="<%=branch._id%>"><%=branch.BranchName%></option>
+     <%})%>
+    </select>
+  </div>              
+        
+     <div class="form-group">
+    <label for="preference10">Preference 10</label>
+    <select style="height: 40px;margin-top:10px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);background-color:white;border-radius: 0px" class="form-control dropdown" id="preference10" name="preference10">
+      <option value=""></option>
+      <%branches.forEach(function(branch){%>
+      <option value ="<%=branch._id%>"><%=branch.BranchName%></option>
+     <%})%>
+    </select>
+  </div>             
+    
+  </div>
+             
+       <div class="form-group"> 
+     <textarea class="form-control" rows="3" placeholderholder="Ask Question" name="description"></textarea><br>
+  </div>
+         
+               
+              
+ 
+    
+    <button type="submit" class="btn btn-success btn-lg btn-block" 
+    style="border-radius: 0px;margin-top: 10px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">Submit The Apply Form</button>
+              
+</form>
+            
+            
+          </div>
+          
+      
+        </div>
+    
+    
+  </body>
+  
+</html>
+
+ 
+
+<style>
+ /* option:checked {
+    display: none;
+}
+*/
+
+
+
+
+</style>
+
+<!-- <script>
+$(".preference option:selected").prop("selected", false);
+</script> -->
+
+<script>
+$(function() {
+  $('.dropdown').change(function() {
+    dropdownval = $(this).val();
+    $('.dropdown').not(this).find('option[value="' + dropdownval + '"]').remove();
+  });
+});
+</script>
+
