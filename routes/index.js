@@ -639,7 +639,7 @@ router.post('/specialApply/:id', function(req, res) {
               var requestInBranch = {
                 id: specialApply._id,
                 By:specialApply.fullName,
-                specialRequest: specialApply.specialRequest
+                specialRequest:true
               }
 
               branch.Requests.push(requestInBranch);

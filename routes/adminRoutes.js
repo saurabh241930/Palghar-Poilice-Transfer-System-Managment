@@ -241,7 +241,7 @@ router.post("/acceptRequest/:id",isLoggedIn,function(req,res){
                     user.requestStatus.requestAcceptedBranchName = requestedBranch.BranchName
                     user.save()
 
-                    res.redirect("back")
+                    res.redirect("/regionwiseRequests")
                   }
                 })
 

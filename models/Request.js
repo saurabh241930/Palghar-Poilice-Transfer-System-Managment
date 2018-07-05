@@ -17,7 +17,10 @@ var RequestSchema = new mongoose.Schema({
     profileImage: String,
     preference:Number,
     type:String,
-    specialRequest:String,
+    specialRequest:{
+        type: Boolean,
+        default: false
+      },
     description:String,
     requestedBranch: {
       Location:String,
