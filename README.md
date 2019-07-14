@@ -4,9 +4,11 @@ In this project I wrote the whole backend of a NodeJS based full-stack web appli
 
 ## 2step-Login Page
 
-<img src="https://i.imgur.com/9s8SZls.png"/>
 
 <img src="https://i.imgur.com/bYi2Pr3.png"/>
+<img src="https://i.imgur.com/9s8SZls.png"/>
+
+
 
 ## Registration page
 
@@ -37,4 +39,34 @@ In this project I wrote the whole backend of a NodeJS based full-stack web appli
 ## After Transfer
 
 <img src="https://i.imgur.com/obLn5Oq.png"/>
+
+## Admin Login Page
+
+<img src="https://i.imgur.com/OA4befA.png"/>
+
+## Admin requests HomePage
+
+<img src="https://i.imgur.com/KjhsKFd.png"/>
+
+## Admin request Page
+
+<img src="https://i.imgur.com/wZyIRQP.png"/>
+
+## Admin page after approval
+
+<img src="https://i.imgur.com/U9WADlP.png"/>
+
+## Admin page branch page
+
+<img src="https://i.imgur.com/AJqfaRW.png"/>
+
+
+## User side page after approval
+
+<img src="https://i.imgur.com/9dEBdQx.png"/>
+
+
+
+
+
 
