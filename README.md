@@ -4,7 +4,7 @@ In this project I wrote the whole backend of a NodeJS based full-stack web appli
 
 ## Login Page
 
-<img src="login_page.png"/>
+<img src="https://i.imgur.com/9s8SZls.png"/>
 
 
 
